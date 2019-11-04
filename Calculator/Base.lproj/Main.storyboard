@@ -226,35 +226,41 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="lha-u4-0LN" userLabel="Button0">
                                         <rect key="frame" x="0.0" y="610" width="410" height="120"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="PJA-IQ-ENx">
-                                                <rect key="frame" x="0.0" y="0.0" width="204" height="120"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oze-DQ-ev1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="101" height="120"/>
-                                                        <color key="backgroundColor" red="0.96896034479141235" green="0.54563558101654053" blue="0.30140054225921631" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="45"/>
-                                                        <state key="normal" title=".">
-                                                            <color key="titleColor" red="0.13028332591056824" green="0.090015970170497894" blue="0.089625604450702667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="pointerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a4n-EM-XOT"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3c-th-WpD">
-                                                        <rect key="frame" x="103" y="0.0" width="101" height="120"/>
-                                                        <color key="backgroundColor" red="0.96896034479141235" green="0.54563558101654053" blue="0.30140054225921631" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="45"/>
-                                                        <state key="normal" title="0">
-                                                            <color key="titleColor" red="0.13028332591056824" green="0.090015970170497894" blue="0.089625604450702667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="numericButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YXB-wy-g6S"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oze-DQ-ev1">
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="120"/>
+                                                <color key="backgroundColor" red="0.96896034479141235" green="0.54563558101654053" blue="0.30140054225921631" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="45"/>
+                                                <state key="normal" title=".">
+                                                    <color key="titleColor" red="0.13028332591056824" green="0.090015970170497894" blue="0.089625604450702667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pointerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a4n-EM-XOT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3c-th-WpD">
+                                                <rect key="frame" x="103" y="0.0" width="101" height="120"/>
+                                                <color key="backgroundColor" red="0.96896034479141235" green="0.54563558101654053" blue="0.30140054225921631" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="45"/>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" red="0.13028332591056824" green="0.090015970170497894" blue="0.089625604450702667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numericButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YXB-wy-g6S"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7E0-yv-cSj">
+                                                <rect key="frame" x="206" y="0.0" width="101" height="120"/>
+                                                <color key="backgroundColor" red="0.96896034480000004" green="0.54563558099999998" blue="0.30140054230000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="45"/>
+                                                <state key="normal" title="+-">
+                                                    <color key="titleColor" red="0.1302833259" green="0.090015970170000001" blue="0.089625604449999993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="plusMinusToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="arv-m7-hEa"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLp-8P-jdk">
-                                                <rect key="frame" x="206" y="0.0" width="204" height="120"/>
+                                                <rect key="frame" x="309" y="0.0" width="101" height="120"/>
                                                 <color key="backgroundColor" red="0.13028332591056824" green="0.090015970170497894" blue="0.089625604450702667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="45"/>
                                                 <state key="normal" title="=">

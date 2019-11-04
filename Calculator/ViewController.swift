@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var displayText = "3"
+    var displayText = ""
     
     var numberOne : Double = 0.0
     var numberOnePositive = true
@@ -26,23 +26,51 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setDisplayLabel(stringToBeDisplayed: self.displayText)
+        setDisplayLabel(stringToBeDisplayed: "0")
         
     }
     
     @IBAction func numericButton(_ sender: UIButton) {
+        var maximumAllowedLength = 10
         
-        print(sender.titleLabel)
-        
+        if(displayText.contains("-"))
+        {
+            maximumAllowedLength = 11
+        }
+        if(displayText.contains("."))
+        {
+            if(displayText.contains("-"))
+            {
+                maximumAllowedLength = 13
+            }
+            maximumAllowedLength = 12
+        }
+        if(displayText.count < maximumAllowedLength)
+        {
+            self.displayText.append((sender.titleLabel?.text)!)
+        }
+        setDisplayLabel(stringToBeDisplayed : self.displayText)
     }
     
-    
+//    -0.0123456789
+    @IBAction func plusMinusToggle(_ sender: UIButton) {
+        if(displayText.contains("-"))
+        {
+            displayText.remove(at: displayText.startIndex)
+        }else{
+            displayText.insert("-", at: displayText.startIndex)
+            
+        }
+        setDisplayLabel(stringToBeDisplayed: displayText)
+    }
     @IBAction func operatorButton(_ sender: UIButton) {
         print(sender.titleLabel)
     }
     
  
     @IBAction func backSpaceButton(_ sender: UIButton) {
+        self.displayText.remove(at: self.displayText.endIndex)
+        setDisplayLabel(stringToBeDisplayed: displayText)
     }
     
     @IBAction func pointerButton(_ sender: UIButton) {
@@ -51,7 +79,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clearAllButton(_ sender: UIButton) {
-        self.displayText = "0"
+        self.displayText = ""
          
          self.numberOne = 0.0
          self.numberOnePositive = true
@@ -62,7 +90,7 @@ class ViewController: UIViewController {
          self.numberTwoPositive = true
          self.numberTwoHasDot = false
          self.numberTwoActive = false //checks if we're taking input for number two
-        setDisplayLabel(stringToBeDisplayed: self.displayText)
+        setDisplayLabel(stringToBeDisplayed: "0")
      }
     
     func setDisplayLabel(stringToBeDisplayed : String)

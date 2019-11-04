@@ -30,5 +30,20 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func operatorButton(_ sender: UIButton) {
+        print(sender.titleLabel)
+    }
+    
+    @IBAction func clearAllButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func backSpaceButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func pointerButton(_ sender: UIButton) {
+    }
+    @IBAction func equalButton(_ sender: UIButton) {
+    }
+    
 }
 

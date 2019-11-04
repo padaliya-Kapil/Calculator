@@ -37,6 +37,9 @@
                                                 <state key="normal" title="&lt;">
                                                     <color key="titleColor" red="0.64548248050000001" green="0.28954654930000001" blue="0.13216191529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="backSpaceButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pao-Jw-I6o"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cex-Jh-s1m">
                                                 <rect key="frame" x="103" y="0.0" width="101" height="120"/>
@@ -45,6 +48,9 @@
                                                 <state key="normal" title="C">
                                                     <color key="titleColor" red="0.13028332591056824" green="0.090015970170497894" blue="0.089625604450702667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="clearAllButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PbT-Kb-jfl"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Khv-z5-pB0">
                                                 <rect key="frame" x="206" y="0.0" width="101" height="120"/>
@@ -53,6 +59,9 @@
                                                 <state key="normal" title="%">
                                                     <color key="titleColor" red="0.1302833259" green="0.090015970170000001" blue="0.089625604449999993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="operatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lql-7g-tii"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecp-oM-Pbx">
                                                 <rect key="frame" x="309" y="0.0" width="101" height="120"/>
@@ -61,6 +70,9 @@
                                                 <state key="normal" title="-">
                                                     <color key="titleColor" red="0.13028332591056824" green="0.090015970170497894" blue="0.089625604450702667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="operatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QKl-x2-0fo"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -107,6 +119,9 @@
                                                 <state key="normal" title="/">
                                                     <color key="titleColor" red="0.13028332591056824" green="0.090015970170497894" blue="0.089625604450702667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="operatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n8w-aO-f3J"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -153,6 +168,9 @@
                                                 <state key="normal" title="*">
                                                     <color key="titleColor" red="0.13028332591056824" green="0.090015970170497894" blue="0.089625604450702667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="operatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yCb-D7-vYl"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -199,6 +217,9 @@
                                                 <state key="normal" title="+">
                                                     <color key="titleColor" red="0.13028332591056824" green="0.090015970170497894" blue="0.089625604450702667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="operatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N8H-sx-Zad"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -215,6 +236,9 @@
                                                         <state key="normal" title=".">
                                                             <color key="titleColor" red="0.13028332591056824" green="0.090015970170497894" blue="0.089625604450702667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="pointerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a4n-EM-XOT"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3c-th-WpD">
                                                         <rect key="frame" x="103" y="0.0" width="101" height="120"/>
@@ -236,6 +260,9 @@
                                                 <state key="normal" title="=">
                                                     <color key="titleColor" red="0.87450980389999999" green="0.86666666670000003" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="equalButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f4M-Vm-yin"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

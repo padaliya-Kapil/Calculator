@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     var numberTwoPositive = true
     var numberTwoHasDot = false
     var numberTwoActive = false //checks if we're taking input for number two
+    
+    var operationSelected = ""
 
     @IBOutlet weak var displayLabel: UILabel!
     
@@ -90,7 +92,16 @@ class ViewController: UIViewController {
         setDisplayLabel(stringToBeDisplayed: displayText)
     }
     @IBAction func operatorButton(_ sender: UIButton) {
-        print(sender.titleLabel)
+        self.operationSelected = (sender.titleLabel?.text)!
+        if(numberOneActive)
+        {
+            numberOne = Double(displayText)!
+            print(numberOne)
+            self.displayText = ""
+            setDisplayLabel(stringToBeDisplayed: self.displayText)
+        }
+        self.numberOneActive = false
+        self.numberTwoActive = true
     }
     
  
@@ -119,6 +130,32 @@ class ViewController: UIViewController {
         setDisplayLabel(stringToBeDisplayed: self.displayText)
     }
     @IBAction func equalButton(_ sender: UIButton) {
+        print(self.numberTwo)
+        if(self.numberTwoActive)
+        {
+            self.numberTwo = Double(displayText)!
+            print(self.numberTwo)
+            
+        let operations = Operations()
+            
+            print("number One : \(self.numberOne)")
+            print("number Two : \(self.numberTwo)")
+            
+            var result  = operations.calculateValue(numberOne : self.numberOne , numberTwo : self.numberTwo , operatorInput : self.operationSelected)
+        print(result)
+       
+        setDisplayLabel(stringToBeDisplayed: String(result))
+            self.numberOne = 0.0
+            self.numberOnePositive = true
+            self.numberOneHasDot = false
+            self.numberOneActive = true
+            
+            self.numberOne = 0.0
+            self.numberOnePositive = true
+            self.numberOneHasDot = false
+            self.numberOneActive = true
+        }
+        
     }
     
     @IBAction func clearAllButton(_ sender: UIButton) {

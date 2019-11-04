@@ -60,7 +60,7 @@
                                                     <color key="titleColor" red="0.1302833259" green="0.090015970170000001" blue="0.089625604449999993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="operatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lql-7g-tii"/>
+                                                    <action selector="operatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QhK-vP-O7N"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecp-oM-Pbx">

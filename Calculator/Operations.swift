@@ -9,6 +9,21 @@
 import Foundation
 struct Operations
 {
+    func calculateValue(numberOne : Double , numberTwo : Double , operatorInput : String) -> Double
+    {
+        print("Operator : \(operatorInput)")
+        switch operatorInput
     
+    {
+    
+    case "+" : return numberOne + numberTwo
+    case "-" : return numberOne - numberTwo
+    case "*" : return numberOne * numberTwo
+    default : do{
+        if(numberTwo == 0.0) { return 0.0 }
+        return numberOne / numberTwo
+        }
+    }
+    }
     
 }

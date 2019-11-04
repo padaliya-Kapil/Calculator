@@ -36,6 +36,10 @@ class ViewController: UIViewController {
         {
             return
         }
+        if(self.displayText.count == 2 && self.displayText == "-0" && ((sender.titleLabel?.text)!) == "0")
+        {
+            return
+        }
         if(self.displayText.count == 0 && ((sender.titleLabel?.text)!) == "0")
         {
                    return
@@ -55,6 +59,13 @@ class ViewController: UIViewController {
         }
         if(displayText.count < maximumAllowedLength )
         {
+            // This is a quick fix logic
+            if(self.displayText.count == 2 && self.displayText == "-0")
+            {
+                self.displayText = "-" + (sender.titleLabel?.text)!
+                setDisplayLabel(stringToBeDisplayed : self.displayText)
+                return
+            }
             self.displayText.append((sender.titleLabel?.text)!)
         }
         setDisplayLabel(stringToBeDisplayed : self.displayText)

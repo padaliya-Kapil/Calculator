@@ -234,7 +234,7 @@
                                                     <color key="titleColor" red="0.13028332591056824" green="0.090015970170497894" blue="0.089625604450702667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="pointerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a4n-EM-XOT"/>
+                                                    <action selector="dotButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a4n-EM-XOT"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3c-th-WpD">

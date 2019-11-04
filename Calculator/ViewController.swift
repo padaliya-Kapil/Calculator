@@ -105,7 +105,18 @@ class ViewController: UIViewController {
             setDisplayLabel(stringToBeDisplayed: self.displayText)}
     }
     
-    @IBAction func pointerButton(_ sender: UIButton) {
+    @IBAction func dotButton(_ sender: UIButton) {
+        if(self.displayText.count == 0)
+        {
+            self.displayText = "0."
+        }else if(self.displayText == "-")
+        {
+            self.displayText = "-0."
+        } else if (!self.displayText.contains("."))
+        {
+            self.displayText.append(".")
+        }
+        setDisplayLabel(stringToBeDisplayed: self.displayText)
     }
     @IBAction func equalButton(_ sender: UIButton) {
     }

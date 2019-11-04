@@ -24,15 +24,8 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func oneButton(_ sender: Any) {
-        if(numberOneHasDot)
-        {
-            numberOne = numberOne*10.0 + 1
-        }else
-        {
-            numberOne = numberOne*10.0 + 1
-            MainPage.text = "\(numberOne)"
-        }
+    @IBAction func numericButton(_ sender: UIButton) {
+        print(sender.titleLabel)
         
     }
     

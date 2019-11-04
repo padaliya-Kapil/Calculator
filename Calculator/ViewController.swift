@@ -92,6 +92,8 @@ class ViewController: UIViewController {
         setDisplayLabel(stringToBeDisplayed: displayText)
     }
     @IBAction func operatorButton(_ sender: UIButton) {
+        
+        
         self.operationSelected = (sender.titleLabel?.text)!
         if(numberOneActive)
         {

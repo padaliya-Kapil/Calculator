@@ -32,6 +32,14 @@ class ViewController: UIViewController {
     
     @IBAction func numericButton(_ sender: UIButton) {
         var maximumAllowedLength = 10
+        if(self.displayText.count == 1 && self.displayText == "0" && ((sender.titleLabel?.text)!) == "0")
+        {
+            return
+        }
+        if(self.displayText.count == 0 && ((sender.titleLabel?.text)!) == "0")
+        {
+                   return
+        }
         
         if(displayText.contains("-"))
         {
@@ -45,7 +53,7 @@ class ViewController: UIViewController {
             }
             maximumAllowedLength = 12
         }
-        if(displayText.count < maximumAllowedLength)
+        if(displayText.count < maximumAllowedLength )
         {
             self.displayText.append((sender.titleLabel?.text)!)
         }
@@ -61,6 +69,13 @@ class ViewController: UIViewController {
             displayText.insert("-", at: displayText.startIndex)
             
         }
+        if(self.numberOneActive)
+        {
+            self.numberOnePositive = false
+        }else
+        {
+            self.numberTwoPositive = false
+        }
         setDisplayLabel(stringToBeDisplayed: displayText)
     }
     @IBAction func operatorButton(_ sender: UIButton) {
@@ -69,8 +84,14 @@ class ViewController: UIViewController {
     
  
     @IBAction func backSpaceButton(_ sender: UIButton) {
-        self.displayText.remove(at: self.displayText.endIndex)
-        setDisplayLabel(stringToBeDisplayed: displayText)
+        if(self.displayText.count == 0)
+        {
+            setDisplayLabel(stringToBeDisplayed: "0")
+        }
+        if(self.displayText.count > 0)
+        {
+            self.displayText = String(self.displayText.dropLast())
+            setDisplayLabel(stringToBeDisplayed: self.displayText)}
     }
     
     @IBAction func pointerButton(_ sender: UIButton) {

@@ -65,16 +65,7 @@ class ViewController: UIViewController {
     }
     
 //    -0.0123456789
-    @IBAction func plusMinusToggle(_ sender: UIButton) {
-        if(self.displayText.contains("-"))
-        {
-            self.displayText.remove(at: self.displayText.startIndex)
-        }else{
-            self.displayText.insert("-", at: self.displayText.startIndex)
-        }
-    
-        setDisplayLabel(stringToBeDisplayed: displayText)
-    }
+ 
     @IBAction func operatorButton(_ sender: UIButton) {
         
         self.operationSelected = (sender.titleLabel?.text)!
@@ -90,33 +81,7 @@ class ViewController: UIViewController {
         
     }
     
- 
-    @IBAction func backSpaceButton(_ sender: UIButton) {
-        if(self.displayText.count == 0)
-        {
-            setDisplayLabel(stringToBeDisplayed: "0")
-        }
-        if(self.displayText.count > 0)
-        {
-            self.displayText = String(self.displayText.dropLast())
-            setDisplayLabel(stringToBeDisplayed: self.displayText)}
-    }
-    
-    @IBAction func dotButton(_ sender: UIButton) {
-        if(self.displayText.count == 0)
-        {
-            self.displayText = "0."
-        }else if(self.displayText == "-")
-        {
-            self.displayText = "-0."
-        } else if (!self.displayText.contains("."))
-        {
-            self.displayText.append(".")
-        }
-        setDisplayLabel(stringToBeDisplayed: self.displayText)
-    }
     @IBAction func equalButton(_ sender: UIButton) {
-        print(self.numberTwo)
         if(self.numberTwoActive && displayText.count != 0)
         {
             self.numberTwo = Double(displayText)!
@@ -134,20 +99,9 @@ class ViewController: UIViewController {
             self.numberOne = result
             
             self.numberTwo = 0.0
-            self.numberTwoActive = false
+            self.numberTwoActive = true
             setDisplayLabel(stringToBeDisplayed: String(result))
             self.displayText = ""
-        }else
-        {
-            setDisplayLabel(stringToBeDisplayed: String("Error"))
-            self.displayText = ""
-            
-            self.numberOne = 0.0
-            self.numberOneActive = true //checks if we're taking input for number one
-            
-            self.numberTwo = 0.0
-            self.numberTwoActive = false
-            
         }
         
     }
@@ -167,5 +121,40 @@ class ViewController: UIViewController {
     {
         self.displayLabel.text = stringToBeDisplayed
     }
-     
+    
+    //Toggles plus minus in display of number
+    @IBAction func plusMinusToggle(_ sender: UIButton) {
+         if(self.displayText.contains("-"))
+         {
+             self.displayText.remove(at: self.displayText.startIndex)
+         }else{
+             self.displayText.insert("-", at: self.displayText.startIndex)
+         }
+         setDisplayLabel(stringToBeDisplayed: displayText)
+     }
+    
+    @IBAction func backSpaceButton(_ sender: UIButton) {
+         if(self.displayText.count == 0)
+         {
+             setDisplayLabel(stringToBeDisplayed: "0")
+         }
+         if(self.displayText.count > 0)
+         {
+             self.displayText = String(self.displayText.dropLast())
+             setDisplayLabel(stringToBeDisplayed: self.displayText)}
+     }
+    
+    @IBAction func dotButton(_ sender: UIButton) {
+        if(self.displayText.count == 0)
+        {
+            self.displayText = "0."
+        }else if(self.displayText == "-")
+        {
+            self.displayText = "-0."
+        } else if (!self.displayText.contains("."))
+        {
+            self.displayText.append(".")
+        }
+        setDisplayLabel(stringToBeDisplayed: self.displayText)
+    }
 }

@@ -28,6 +28,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func numericButton(_ sender: UIButton) {
+        sender.alpha = 0.5
+               _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false)
+               {
+                (timer)
+                in
         var maximumAllowedLength = 10
         if(self.displayText.count == 1 && self.displayText == "0" && ((sender.titleLabel?.text)!) == "0")
         {
@@ -56,54 +61,73 @@ class ViewController: UIViewController {
             if(self.displayText.count == 2 && self.displayText == "-0")
             {
                 self.displayText = "-" + (sender.titleLabel?.text)!
-                setDisplayLabel(stringToBeDisplayed : self.displayText)
+                self.setDisplayLabel(stringToBeDisplayed : self.displayText)
                 return
             }
             self.displayText.append((sender.titleLabel?.text)!)
         }
-        setDisplayLabel(stringToBeDisplayed : self.displayText)
+                self.setDisplayLabel(stringToBeDisplayed : self.displayText)
+                sender.alpha = 1
+                                
+                              }
     }
     
 //    -0.0123456789
  
     @IBAction func operatorButton(_ sender: UIButton) {
+        sender.alpha = 0.5
+        _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false)
+        {
+         (timer)
+         in
         
         if((sender.titleLabel?.text)! == "%" )
         {
-            if(numberOneActive && self.displayText.count > 0)
+            if(self.numberOneActive && self.displayText.count > 0)
             {
                 self.numberOne = Double(self.displayText)!/100.0
                 self.displayText = String(self.numberOne)
-                setDisplayLabel(stringToBeDisplayed: displayText)
+                self.setDisplayLabel(stringToBeDisplayed: self.displayText)
                 
             }
-            if(numberTwoActive && self.displayText.count > 0)
+            if(self.numberTwoActive && self.displayText.count > 0)
             {
                 self.numberTwo = Double(self.displayText)!/100.0
                 self.displayText = String(self.numberTwo)
-                setDisplayLabel(stringToBeDisplayed: displayText)
+                self.setDisplayLabel(stringToBeDisplayed: self.displayText)
             }
+            sender.alpha = 1
+              
             return
         }
         
         self.operationSelected = (sender.titleLabel?.text)!
-        if(numberOneActive && self.displayText.count > 0)
+            if(self.numberOneActive && self.displayText.count > 0)
         {
-            numberOne = Double(displayText)!
-            print(numberOne)
+            self.numberOne = Double(self.displayText)!
+            print(self.numberOne)
             self.displayText = ""
-            setDisplayLabel(stringToBeDisplayed: self.displayText)
+            self.setDisplayLabel(stringToBeDisplayed: self.displayText)
             self.numberOneActive = false
             self.numberTwoActive = true
         }
+            sender.alpha = 1
+                            
+                          }
+
         
     }
     
     @IBAction func equalButton(_ sender: UIButton) {
+        sender.alpha = 0.5
+        _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false)
+               {
+                (timer)
+                in
 
-        if(self.numberTwoActive && displayText.count != 0)
+                if(self.numberTwoActive && self.displayText.count != 0)
         {
-            self.numberTwo = Double(displayText)!
+            self.numberTwo = Double(self.displayText)!
             print(self.numberTwo)
             
         let operations = Operations()
@@ -115,13 +139,13 @@ class ViewController: UIViewController {
             {
                 self.numberOne = result
                 print(result)
-                setDisplayLabel(stringToBeDisplayed: String(result))
+                self.setDisplayLabel(stringToBeDisplayed: String(result))
                 self.numberTwo = 0.0
                 self.numberTwoActive = true
                 self.displayText = ""
             }else
             {
-                setDisplayLabel(stringToBeDisplayed: String("error"))
+                self.setDisplayLabel(stringToBeDisplayed: String("error"))
                 self.displayText = ""
                 
                 self.numberOne = 0.0
@@ -133,10 +157,18 @@ class ViewController: UIViewController {
                 
             
         }
+                sender.alpha = 1
+                  
+                }
         
     }
     
     @IBAction func clearAllButton(_ sender: UIButton) {
+        sender.alpha = 0.5
+        _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false)
+             {
+              (timer)
+              in
         self.displayText = ""
          
          self.numberOne = 0.0
@@ -144,37 +176,62 @@ class ViewController: UIViewController {
          
          self.numberTwo = 0.0
          self.numberTwoActive = false //checks if we're taking input for number two
-        setDisplayLabel(stringToBeDisplayed: "0")
+                self.setDisplayLabel(stringToBeDisplayed: "0")
+                sender.alpha = 1
+                                 
+                               }
      }
     
     func setDisplayLabel(stringToBeDisplayed : String)
     {
         self.displayLabel.text = stringToBeDisplayed
+        
     }
     
     //Toggles plus minus in display of number
     @IBAction func plusMinusToggle(_ sender: UIButton) {
+        sender.alpha = 0.5
+               _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false)
+                    {
+                     (timer)
+                     in
          if(self.displayText.contains("-"))
          {
              self.displayText.remove(at: self.displayText.startIndex)
          }else{
              self.displayText.insert("-", at: self.displayText.startIndex)
          }
-         setDisplayLabel(stringToBeDisplayed: displayText)
+                        self.setDisplayLabel(stringToBeDisplayed: self.displayText)
+                        sender.alpha = 1
+                          
+                        }
      }
     
     @IBAction func backSpaceButton(_ sender: UIButton) {
+        sender.alpha = 0.5
+                      _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false)
+                           {
+                            (timer)
+                            in
          if(self.displayText.count == 0)
          {
-             setDisplayLabel(stringToBeDisplayed: "0")
+            self.setDisplayLabel(stringToBeDisplayed: "0")
          }
          if(self.displayText.count > 0)
          {
              self.displayText = String(self.displayText.dropLast())
-             setDisplayLabel(stringToBeDisplayed: self.displayText)}
+            self.setDisplayLabel(stringToBeDisplayed: self.displayText)}
+                            sender.alpha = 1
+                                                     
+                                                   }
      }
     
     @IBAction func dotButton(_ sender: UIButton) {
+        sender.alpha = 0.5
+        _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false)
+             {
+              (timer)
+              in
         if(self.displayText.count == 0)
         {
             self.displayText = "0."
@@ -185,6 +242,9 @@ class ViewController: UIViewController {
         {
             self.displayText.append(".")
         }
-        setDisplayLabel(stringToBeDisplayed: self.displayText)
+                self.setDisplayLabel(stringToBeDisplayed: self.displayText)
+                sender.alpha = 1
+                                                                    
+                                                                  }
     }
 }

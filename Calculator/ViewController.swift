@@ -47,19 +47,19 @@ class ViewController: UIViewController {
                    return
         }
         
-        if(displayText.contains("-"))
+        if(self.displayText.contains("-"))
         {
             maximumAllowedLength = 11
         }
-        if(displayText.contains("."))
+        if(self.displayText.contains("."))
         {
-            if(displayText.contains("-"))
+            if(self.displayText.contains("-"))
             {
                 maximumAllowedLength = 13
             }
             maximumAllowedLength = 12
         }
-        if(displayText.count < maximumAllowedLength )
+        if(self.displayText.count < maximumAllowedLength )
         {
             // This is a quick fix logic
             if(self.displayText.count == 2 && self.displayText == "-0")
@@ -75,12 +75,11 @@ class ViewController: UIViewController {
     
 //    -0.0123456789
     @IBAction func plusMinusToggle(_ sender: UIButton) {
-        if(displayText.contains("-"))
+        if(self.displayText.contains("-"))
         {
-            displayText.remove(at: displayText.startIndex)
+            self.displayText.remove(at: self.displayText.startIndex)
         }else{
-            displayText.insert("-", at: displayText.startIndex)
-            
+            self.displayText.insert("-", at: self.displayText.startIndex)
         }
         if(self.numberOneActive)
         {
@@ -101,8 +100,8 @@ class ViewController: UIViewController {
             print(numberOne)
             self.displayText = ""
             setDisplayLabel(stringToBeDisplayed: self.displayText)
+            self.numberOneActive = false
         }
-        self.numberOneActive = false
         self.numberTwoActive = true
     }
     
@@ -133,7 +132,7 @@ class ViewController: UIViewController {
     }
     @IBAction func equalButton(_ sender: UIButton) {
         print(self.numberTwo)
-        if(self.numberTwoActive)
+        if(self.numberTwoActive && displayText.count != 0)
         {
             self.numberTwo = Double(displayText)!
             print(self.numberTwo)
@@ -143,19 +142,33 @@ class ViewController: UIViewController {
             print("number One : \(self.numberOne)")
             print("number Two : \(self.numberTwo)")
             
-            var result  = operations.calculateValue(numberOne : self.numberOne , numberTwo : self.numberTwo , operatorInput : self.operationSelected)
+            let result  = operations.calculateValue(numberOne : self.numberOne , numberTwo : self.numberTwo , operatorInput : self.operationSelected)
         print(result)
        
-        setDisplayLabel(stringToBeDisplayed: String(result))
-            self.numberOne = 0.0
-            self.numberOnePositive = true
-            self.numberOneHasDot = false
-            self.numberOneActive = true
+        
+            self.numberOne = result
+            
+            self.numberTwo = 0.0
+            self.numberTwoPositive = true
+            self.numberTwoHasDot = false
+            self.numberTwoActive = false
+            setDisplayLabel(stringToBeDisplayed: String(result))
+            self.displayText = ""
+        }else
+        {
+            setDisplayLabel(stringToBeDisplayed: String("Error"))
+            self.displayText = ""
             
             self.numberOne = 0.0
             self.numberOnePositive = true
             self.numberOneHasDot = false
-            self.numberOneActive = true
+            self.numberOneActive = true //checks if we're taking input for number one
+            
+            self.numberTwo = 0.0
+            self.numberTwoPositive = true
+            self.numberTwoHasDot = false
+            self.numberTwoActive = false
+            
         }
         
     }
@@ -177,7 +190,7 @@ class ViewController: UIViewController {
     
     func setDisplayLabel(stringToBeDisplayed : String)
     {
-        displayLabel.text = stringToBeDisplayed
+        self.displayLabel.text = stringToBeDisplayed
     }
      
 }

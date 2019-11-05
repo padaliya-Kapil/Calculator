@@ -68,6 +68,24 @@ class ViewController: UIViewController {
  
     @IBAction func operatorButton(_ sender: UIButton) {
         
+        if((sender.titleLabel?.text)! == "%" )
+        {
+            if(numberOneActive && self.displayText.count > 0)
+            {
+                self.numberOne = Double(self.displayText)!/100.0
+                self.displayText = String(self.numberOne)
+                setDisplayLabel(stringToBeDisplayed: displayText)
+                
+            }
+            if(numberTwoActive && self.displayText.count > 0)
+            {
+                self.numberTwo = Double(self.displayText)!/100.0
+                self.displayText = String(self.numberTwo)
+                setDisplayLabel(stringToBeDisplayed: displayText)
+            }
+            return
+        }
+        
         self.operationSelected = (sender.titleLabel?.text)!
         if(numberOneActive && self.displayText.count > 0)
         {

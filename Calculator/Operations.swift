@@ -19,10 +19,11 @@ struct Operations
     case "+" : return numberOne + numberTwo
     case "-" : return numberOne - numberTwo
     case "*" : return numberOne * numberTwo
-    default : do{
+    case "/" : do{
         if(numberTwo == 0.0) { return nil }
         return numberOne / numberTwo
         }
+        default   : return nil
     }
     }
     

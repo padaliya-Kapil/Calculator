@@ -9,7 +9,7 @@
 import Foundation
 struct Operations
 {
-    func calculateValue(numberOne : Double , numberTwo : Double , operatorInput : String) -> Double
+    func calculateValue(numberOne : Double , numberTwo : Double , operatorInput : String) -> Double?
     {
         print("Operator : \(operatorInput)")
         switch operatorInput
@@ -20,7 +20,7 @@ struct Operations
     case "-" : return numberOne - numberTwo
     case "*" : return numberOne * numberTwo
     default : do{
-        if(numberTwo == 0.0) { return 0.0 }
+        if(numberTwo == 0.0) { return nil }
         return numberOne / numberTwo
         }
     }

@@ -82,6 +82,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func equalButton(_ sender: UIButton) {
+
         if(self.numberTwoActive && displayText.count != 0)
         {
             self.numberTwo = Double(displayText)!
@@ -92,16 +93,27 @@ class ViewController: UIViewController {
             print("number One : \(self.numberOne)")
             print("number Two : \(self.numberTwo)")
             
-            let result  = operations.calculateValue(numberOne : self.numberOne , numberTwo : self.numberTwo , operatorInput : self.operationSelected)
-        print(result)
-       
-        
-            self.numberOne = result
+            if let result  = operations.calculateValue(numberOne : self.numberOne , numberTwo : self.numberTwo , operatorInput : self.operationSelected)
+            {
+                self.numberOne = result
+                print(result)
+                setDisplayLabel(stringToBeDisplayed: String(result))
+                self.numberTwo = 0.0
+                self.numberTwoActive = true
+                self.displayText = ""
+            }else
+            {
+                setDisplayLabel(stringToBeDisplayed: String("error"))
+                self.displayText = ""
+                
+                self.numberOne = 0.0
+                self.numberOneActive = true //checks if we're taking input for number one
+                
+                self.numberTwo = 0.0
+                self.numberTwoActive = false //checks if we're taking input for number two
+            }
+                
             
-            self.numberTwo = 0.0
-            self.numberTwoActive = true
-            setDisplayLabel(stringToBeDisplayed: String(result))
-            self.displayText = ""
         }
         
     }

@@ -5,7 +5,6 @@
 //  Created by MacStudent on 2019-10-30.
 //  Copyright © 2019 MacStudent. All rights reserved.
 //
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -13,13 +12,9 @@ class ViewController: UIViewController {
     var displayText = ""
     
     var numberOne : Double = 0.0
-    var numberOnePositive = true
-    var numberOneHasDot = false
     var numberOneActive = true //checks if we're taking input for number one
     
     var numberTwo : Double = 0.0
-    var numberTwoPositive = true
-    var numberTwoHasDot = false
     var numberTwoActive = false //checks if we're taking input for number two
     
     var operationSelected = ""
@@ -41,10 +36,6 @@ class ViewController: UIViewController {
         if(self.displayText.count == 2 && self.displayText == "-0" && ((sender.titleLabel?.text)!) == "0")
         {
             return
-        }
-        if(self.displayText.count == 0 && ((sender.titleLabel?.text)!) == "0")
-        {
-                   return
         }
         
         if(self.displayText.contains("-"))
@@ -81,28 +72,22 @@ class ViewController: UIViewController {
         }else{
             self.displayText.insert("-", at: self.displayText.startIndex)
         }
-        if(self.numberOneActive)
-        {
-            self.numberOnePositive = false
-        }else
-        {
-            self.numberTwoPositive = false
-        }
+    
         setDisplayLabel(stringToBeDisplayed: displayText)
     }
     @IBAction func operatorButton(_ sender: UIButton) {
         
-        
         self.operationSelected = (sender.titleLabel?.text)!
-        if(numberOneActive)
+        if(numberOneActive && self.displayText.count > 0)
         {
             numberOne = Double(displayText)!
             print(numberOne)
             self.displayText = ""
             setDisplayLabel(stringToBeDisplayed: self.displayText)
             self.numberOneActive = false
+            self.numberTwoActive = true
         }
-        self.numberTwoActive = true
+        
     }
     
  
@@ -149,8 +134,6 @@ class ViewController: UIViewController {
             self.numberOne = result
             
             self.numberTwo = 0.0
-            self.numberTwoPositive = true
-            self.numberTwoHasDot = false
             self.numberTwoActive = false
             setDisplayLabel(stringToBeDisplayed: String(result))
             self.displayText = ""
@@ -160,13 +143,9 @@ class ViewController: UIViewController {
             self.displayText = ""
             
             self.numberOne = 0.0
-            self.numberOnePositive = true
-            self.numberOneHasDot = false
             self.numberOneActive = true //checks if we're taking input for number one
             
             self.numberTwo = 0.0
-            self.numberTwoPositive = true
-            self.numberTwoHasDot = false
             self.numberTwoActive = false
             
         }
@@ -177,13 +156,9 @@ class ViewController: UIViewController {
         self.displayText = ""
          
          self.numberOne = 0.0
-         self.numberOnePositive = true
-         self.numberOneHasDot = false
          self.numberOneActive = true //checks if we're taking input for number one
          
          self.numberTwo = 0.0
-         self.numberTwoPositive = true
-         self.numberTwoHasDot = false
          self.numberTwoActive = false //checks if we're taking input for number two
         setDisplayLabel(stringToBeDisplayed: "0")
      }
@@ -194,4 +169,3 @@ class ViewController: UIViewController {
     }
      
 }
-

@@ -36,10 +36,12 @@ class ViewController: UIViewController {
         var maximumAllowedLength = 10
         if(self.displayText.count == 1 && self.displayText == "0" && ((sender.titleLabel?.text)!) == "0")
         {
+            sender.alpha = 1
             return
         }
         if(self.displayText.count == 2 && self.displayText == "-0" && ((sender.titleLabel?.text)!) == "0")
         {
+            sender.alpha = 1
             return
         }
         

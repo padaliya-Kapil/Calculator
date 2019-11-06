@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         var maximumAllowedLength = 10
         if(self.displayText.count == 1 && self.displayText == "0" && ((sender.titleLabel?.text)!) == "0")
         {
+            self.displayText = ""
             sender.alpha = 1
             return
         }
@@ -64,8 +65,10 @@ class ViewController: UIViewController {
             {
                 self.displayText = "-" + (sender.titleLabel?.text)!
                 self.setDisplayLabel(stringToBeDisplayed : self.displayText)
+                sender.alpha = 1
                 return
             }
+            
             self.displayText.append((sender.titleLabel?.text)!)
         }
                 self.setDisplayLabel(stringToBeDisplayed : self.displayText)

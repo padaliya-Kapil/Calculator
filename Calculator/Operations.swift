@@ -31,11 +31,20 @@ struct Operations
     
     func rounder(result : Double) -> Double
     {
-        print("Incoming result : \(result)")
+        
         let resultString = String(result)
         if(resultString.count > 11 )
         {
-            print(String(format: "%.2f",result),"This is re")
+           
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .scientific
+            formatter.positiveFormat = "0.###E+0"
+            formatter.exponentSymbol = "e"
+            
+            if let scientificFormatted = formatter.string(for : result)
+            {
+                return Double(scientificFormatted)!
+            }
         }
         return result
     }/*8*/
@@ -45,5 +54,8 @@ struct Operations
     // Largest Possible number code can think of : 9.999999998e+19
     // Smallest possible positive code can think of : 1.0000000000999999e-22
     // Smallest possible positive code can think of -9.999999998e+19
+   
+    
+    
     
 }
